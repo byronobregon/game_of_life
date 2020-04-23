@@ -1,3 +1,6 @@
+<%= button_tag 'Guardar Estado', id: 'save' %>
+<%= button_tag 'Pausar', id: 'pause' %>
+<%= button_tag 'Iniciar', id: 'play', data: { game: 'paused' } %>
 <table>
   <tbody>
     <% @cells.each do |y_position, cells| %>
@@ -7,7 +10,8 @@
             <div
               class="cell"
               style='background-color:<%= cell.color %>'
-              data-id='<%= cell.id %>'>
+              data-id='<%= cell.id %>'
+              data-alive='<%= cell.alive %>'>
             </div>
           </td>
         <% end %>

@@ -5,6 +5,11 @@ class Cell < ApplicationRecord
     return self.alive? ? '#FFFFFF' : '#383838'
   end
 
+  def self.save_state(cells)
+    Cell.update_all alive: false
+    Cell.where(id: cells).update_all alive: true
+  end
+
   def self.create_cells
     array = (1..200).map(&:to_i)
 

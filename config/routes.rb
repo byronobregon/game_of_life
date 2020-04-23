@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :cells, only: :index do
+    collection { post :save_state }
+  end
+
   root 'cells#index'
 end
