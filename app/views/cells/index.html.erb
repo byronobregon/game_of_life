@@ -1,0 +1,17 @@
+<table>
+  <tbody>
+    <% @cells.each do |y_position, cells| %>
+      <tr>
+        <% cells.each do |cell| %>
+          <td>
+            <div
+              class="cell"
+              style='background-color:<%= cell.color %>'
+              data-id='<%= cell.id %>'>
+            </div>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
