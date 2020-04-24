@@ -117,7 +117,7 @@ cells = {
       if ($('#play').attr('data-game') == 'playing') {
         cells.apply_step()
       }
-    }, 250)
+    }, 0)
 
     $('.cell').on('click', function () {
       cells.update_cell($(this))

@@ -11,10 +11,11 @@ class Cell < ApplicationRecord
   end
 
   def self.create_cells
-    array = (1..200).map(&:to_i)
+    y_array = (1..70).map(&:to_i)
+    x_array = (1..100).map(&:to_i)
 
-    array.each do |y|
-      array.each { |x| self.create(x_position: x, y_position: y) }
+    y_array.each do |y|
+      x_array.each { |x| self.create(x_position: x, y_position: y) }
     end
   end
 
