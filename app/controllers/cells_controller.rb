@@ -6,4 +6,10 @@ class CellsController < ApplicationController
   def save_state
     Cell.save_state(params[:cells])
   end
+
+  def reset_field
+    Cell.reset_field
+
+    redirect_to root_path
+  end
 end

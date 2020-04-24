@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   resources :cells, only: :index do
-    collection { post :save_state }
+    collection do
+      post :save_state
+      post :reset_field
+    end
   end
 
   root 'cells#index'

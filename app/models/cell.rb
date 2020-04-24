@@ -6,7 +6,7 @@ class Cell < ApplicationRecord
   end
 
   def self.save_state(cells)
-    Cell.update_all alive: false
+    Cell.reset_field
     Cell.where(id: cells).update_all alive: true
   end
 
@@ -16,5 +16,9 @@ class Cell < ApplicationRecord
     array.each do |y|
       array.each { |x| self.create(x_position: x, y_position: y) }
     end
+  end
+
+  def self.reset_field
+    Cell.update_all alive: false
   end
 end

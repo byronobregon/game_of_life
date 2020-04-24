@@ -3,6 +3,14 @@ $(document).on('turbolinks:load', function () {
 })
 
 cells = {
+  reset_world: function () {
+    $.ajax({
+      type: "POST",
+      dataType: "script",
+      url: '/cells/reset_field'
+    })
+  },
+
   start_game: function () {
     $('#play').attr('data-game', 'playing')
   },
@@ -125,6 +133,10 @@ cells = {
 
     $('#play').on('click', function () {
       cells.start_game()
+    })
+
+    $('#reset').on('click', function () {
+      cells.reset_world()
     })
   }
 }
