@@ -8,10 +8,12 @@
         <% cells.each do |cell| %>
           <td>
             <div
-              class="cell"
+              class="cell <%= "#{cell.x_position}-#{cell.y_position}" %> <%= 'alive' if cell.alive? %>"
               style='background-color:<%= cell.color %>'
               data-id='<%= cell.id %>'
-              data-alive='<%= cell.alive %>'>
+              data-alive='<%= cell.alive %>'
+              data-x='<%= cell.x_position %>'
+              data-y='<%= cell.y_position %>'>
             </div>
           </td>
         <% end %>
